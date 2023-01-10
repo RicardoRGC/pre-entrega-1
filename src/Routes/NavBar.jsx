@@ -1,7 +1,9 @@
 import React from "react";
 import { useDisclosure } from "@chakra-ui/react";
-import CartWidget from "./CartWidget";
-import CartShop from "./CartShop";
+import CartWidget from "../components/NavBar/CartWidget";
+import CartShop from "../components/NavBar/CartShop";
+import { NavLink } from "react-router-dom";
+
 const NavBar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
@@ -10,18 +12,18 @@ const NavBar = () => {
       <div className="nav">
         <div className="logo">NH BLANQUERIA</div>
         <nav className="nav-link">
-          <a href="" className="links">
+          <NavLink to="/nosotros" className="links">
             Nosotros
-          </a>
-          <a href="" className="links">
+          </NavLink>
+          <NavLink to="/" className="links">
             Productos
-          </a>
-          <a href="" className="links">
+          </NavLink>
+          <NavLink to="caracteristicas/" className="links">
             Caracteristicas
-          </a>
-          <a href="" className="links">
+          </NavLink>
+          <NavLink to="locales" className="links">
             Locales
-          </a>
+          </NavLink>
         </nav>
         <div className="icon">
           <CartWidget btnRef={btnRef} onOpen={onOpen}></CartWidget>
