@@ -8,6 +8,7 @@ import {
   DrawerCloseButton,
   Button,
 } from "@chakra-ui/react";
+import CardCart from "../CardCart";
 
 const CartShop = ({ isOpen, onClose, btnRef }) => {
   return (
@@ -25,6 +26,7 @@ const CartShop = ({ isOpen, onClose, btnRef }) => {
 
           <DrawerBody>
             <h3>Agregar Elemento</h3>
+            <CardCart></CardCart>
           </DrawerBody>
 
           <DrawerFooter>

@@ -1,19 +1,36 @@
-import NavBar from "./components/NavBar";
+import NavBar from "./Routes/NavBar";
 import "./index.css";
-import { Flex, Spacer } from "@chakra-ui/react";
-import ItemListContainer from "./components/ItemListContainer";
+import ItemListContainer from "./Routes/ItemListContainer";
+import { Routes, Route } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
+import ErrorPage from "./NotFound";
+import Nosotros from "./Routes/Nosotros";
+
 function App() {
+  
+  
+
   return (
     <>
-      <NavBar post="fixed" />
-      <Flex wrap="wrap" alignItems="center" justifyContent="center" pt="80px">
-        <ItemListContainer greeting={"Producto a vender"} />
-        <ItemListContainer greeting={"Producto a vender"} />
-        <ItemListContainer greeting={"Producto a vender"} />
-        <ItemListContainer greeting={"Producto a vender"} />
-        <ItemListContainer greeting={"Producto a vender"} />
-        <ItemListContainer greeting={"Producto a vender"} />
-      </Flex>
+      <BrowserRouter>
+        <NavBar post="fixed" />
+        <Routes>
+          <Route
+            path="/"
+            element={<ItemListContainer  />}
+          />
+          <Route
+            path="/:id"
+            element={<ItemListContainer />}
+          />
+          <Route
+            path="/nosotros"
+            element={<Nosotros />}
+          />
+          <Route path="*" element={<ErrorPage />} />
+
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
