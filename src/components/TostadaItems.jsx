@@ -15,17 +15,17 @@ function TostadaItems() {
       <ButtonTostada
         nombre={"electronics"}
         handleClick={handleClick}
-        patch={"electronics"}
+        patch={"category/electronics"}
       />
       <ButtonTostada
         nombre={"jewelery"}
         handleClick={handleClick}
-        patch={"jewelery"}
+        patch={"category/jewelery"}
       />
       <ButtonTostada
         nombre={"men's clothing"}
         handleClick={handleClick}
-        patch={"men's clothing"}
+        patch={"category/men's clothing"}
       />
     </>
   );

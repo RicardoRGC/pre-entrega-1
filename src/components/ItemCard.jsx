@@ -16,7 +16,14 @@ import {
 } from "@chakra-ui/react";
 import { CgAddR } from "react-icons/cg";
 import { GoDiffRemoved } from "react-icons/go";
+import { useNavigate } from "react-router-dom";
+
+
 function ItemCard({ producto }) {
+  const navigate = useNavigate();
+  const handleClick = (e) => {
+    navigate(`/item/${e}`);
+  };
   const [lines, setLines] = useState(true);
   return (
     <>
@@ -52,8 +59,8 @@ function ItemCard({ producto }) {
         <Divider />
         <CardFooter   >
           <ButtonGroup display="flex" spacing="2" flexWrap='wrap' >
-            <Button variant="solid" colorScheme="blue">
-              Buy now
+            <Button  onClick={ ()=> handleClick(producto.id)}  variant="solid" colorScheme="blue">
+              Detalles
             </Button>
             <IconButton
               variant="outline"

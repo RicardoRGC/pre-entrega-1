@@ -10,7 +10,7 @@ const ItemListContainer = () => {
   const params = useParams();
   const [datos, setDatos] = useState([]);
   // console.log(JSON.stringify(params) === "{}");
-  // console.log(datos);
+   console.log(params);
 
   function handleFetch() {
     fetch(
